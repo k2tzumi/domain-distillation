@@ -5,12 +5,10 @@ theme: seriph
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://cover.sli.dev
 # some information about your slides (markdown enabled)
-title: Welcome to Slidev
+title: アーキテクチャレベルで依存性を逆転させたら最高だった話
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
+  PHPカンファレンス福岡2025
+  https://phpcon.fukuoka.jp/2025/
 # apply unocss classes to the current slide
 class: text-center
 # https://sli.dev/features/drawing
@@ -27,9 +25,11 @@ addons:
   - slidev-addon-rabbit
 ---
 
-# Welcome to Slidev
+# アーキテクチャレベルで依存性を逆転させたら最高だった話
 
-Presentation slides for developers @ v0.2.2
+PHPカンファレンス福岡2025 November 8, 2025.  
+v0.0.1  
+@katzumi(かつみ)
 
 <div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
   Press Space for next page <carbon:arrow-right />
@@ -39,7 +39,7 @@ Presentation slides for developers @ v0.2.2
   <button @click="$slidev.nav.openInEditor" title="Open in Editor" class="slidev-icon-btn">
     <carbon:edit />
   </button>
-  <a href="https://github.com/k2tzumi/slidev-boilerplate" target="_blank" class="slidev-icon-btn">
+  <a href="https://github.com/k2tzumi/domain-distillation" target="_blank" class="slidev-icon-btn">
     <carbon:logo-github />
   </a>
 </div>
@@ -50,28 +50,35 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 transition: fade-out
+layout: two-cols-header
 ---
 
-# What is Slidev？
+# <carbon-user-avatar /> 自己紹介
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+katzumi（かつみ）と申します。
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-<br>
-<br>
+「障害のない社会をつくる」をビジョンとする「LITALICO（りたりこ）」に所属しています
+<a href="https://litalico.co.jp/">
+<img src="https://litalico.co.jp/ogp.png" class="w-40" />
+</a>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+以下のアカウントで活動しています。
 
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
+::left::
+
+<div class="float-left">
+<img src="https://pbs.twimg.com/profile_images/1961960367351005184/LpDD3fDz_400x400.jpg" class="rounded-full w-40 mr"/>  
+<simple-icons-x /> <a href="https://twitter.com/katzchum">katzchum</a></div>  
+<QRCode :width="180" :height="180" value="https://twitter.com/katzchum" color="4329B9" image="Logo_of_X.svg" />
+
+::right::
+
+<img src="https://avatars.githubusercontent.com/u/1182787?v=4" class="rounded-full w-40 mr-12"/>
+
+<logos-github-octocat /> [k2tzumi](https://github.com/k2tzumi)  
+<simple-icons-zenn /> [katzumi](https://zenn.dev/katzumi)  
+
+<br />
 
 <style>
 h1 {
@@ -86,569 +93,408 @@ h1 {
 </style>
 
 <!--
-Here is another comment.
+はじめましてkatzumiと申します  
+LITALICOという会社で、社内ではSlack Bot Officerとして活動しています。  
+好きなラーメンは油そばとベジポタラーメンです
 -->
 
 ---
-transition: slide-up
-level: 2
+layout: two-cols-header
+transition: fade-out
 ---
 
-# Navigation
+# <carbon-information /> お願い 🙏
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
+写真撮影、SNS での実況について
 
-## Keyboard Shortcuts
+登壇者の励みになるので是非ともご意見やご感想など、フィードバック頂けると助かります mm  
+スライドの内容は、すでに以下の場所で公開されていますので、ぜひお手元でご覧ください  
 
-|                                                     |                             |
-| --------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                 | next animation or slide     |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                       | previous slide              |
-| <kbd>down</kbd>                                     | next slide                  |
+* [forteeのプロポーザルページ](https://fortee.jp/phpcon-fukuoka-2025/proposal/6675eb22-13f1-4b11-8093-1b522345c2eb)
+* または <fa6-brands-square-x-twitter /> の投稿
 
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+::left::
 
----
-layout: two-cols
-layoutClass: gap-16
----
-
-# Table of contents
-
-You can use the `Toc` component to generate a table of contents for your slides:
-
-```html
-<Toc minDepth="1" maxDepth="1" />
-```
-
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
+<Transform :scale="2.5">
+　　　🙆‍♀📷<ph-projector-screen-chart-light /><br />
+　　　🙅‍♂📹💸<br />
+　　　🙅📸👨‍👦‍👦<br />
+</Transform>
 
 ::right::
 
-<Toc text-sm minDepth="1" maxDepth="2" />
-
----
-layout: image-right
-image: https://cover.sli.dev
----
-
-# Code
-
-Use code snippets and get the highlighting directly, and even types hover！
-
-```ts {all|5|7|7-8|10|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-
-import { computed, ref } from 'vue'
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-
-[Learn more](https://sli.dev/features/line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
+<br />
+<Transform :scale="2">
+<fa6-brands-square-x-twitter />
+</Transform>
+<br />
+<a href="https://x.com/search?q=%23phpconfuk%20%23hall_d&f=live">#phpconfuk #hall_d</a>
 
 <!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
+いっぱい呟いてください
 -->
 
 ---
-level: 2
----
 
-# Shiki Magic Move
+# 本日のお話すること
+とある複雑なドメインを扱うシステムの物語です。集大成的なお話をします
 
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
-check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
-
----
-
-# Clicks Animations
-
-You can add `v-click` to elements to add a click animation.
-
-<div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
-
-</div>
-
-<br>
+* レセプト業務という複雑なドメインで、2度の大規模法改正に立ち向かった実体験です。
+* ２度のリアーキテクチャを経てRezept as a Serviceを立ち上げた話（ドメイン蒸留）
+* どうやってサービスを実現し、どういうメリットがあったのか？（戦術）
+* 何故Rezept as a Serviceが必要だと判断したのか？（戦略）
 
 <v-click>
 
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
+元ネタは昨年のアドベントカレンダーです。
 
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
+<Transform :scale="0.5">
+
+<a href="https://b.hatena.ne.jp/entrylist?url=https%3A%2F%2Fzenn.dev%2Flitalico%2Farticles%2Fdomain-distillation" target="_blank">
+<img src="/hateb.png" />
+</a>
+
+</Transform>
 
 </v-click>
 
-<div mt-20 v-click>
+---
+transition: fade-out
+---
 
-[Learn more](https://sli.dev/guide/animations#click-animation)
+# レセプト業務の複雑さを視覚化
 
+圧巻の 1.5K 頁オーバー。3 年に 1 回、大改訂（大改定）があります
+
+<img src="/ISBN-978-4805887332.png" />
+
+---
+layout: image-right
+image: /ISBN-978-4824300867.png
+transition: slide-up
+---
+
+# 厚い本が更に厚くなる
+手に取って持ち運べるような、携帯に便利な手引書感がまったくない、改訂版がこちら
+
+なぜか３部作にｗ  
+全体のページ数が2kオーバーに  
+モデルチェンジで x1.3 増ページはなかなか、、
+
+---
+
+# 「レセプト業務」って何？
+医療で言うところの診療報酬明細書（医療点数が書かれているアレ）を作成するお仕事です
+
+<Transform :scale="1.2">
+
+* **🧾 概要**  
+障害福祉サービスや介護事業所で提供されたサービスの費用を計算し、  
+市町村や国保連などの支払い機関に請求する業務です。  
+利用者は費用の一部（利用者負担額）を支払い、  
+残りの公費・保険負担分を正確に計算し請求するのが重要な役割です。  
+計算の基となるのは、サービス内容に応じて定められた「単位数」です。  
+これは「単位数表」で定義されています。  
+
+* **🗂️ 計算ルールをまとめたもの=単位数表を図式化したもの＝算定構造**  
+単位数を計算するプロセスを「算定」と呼びます。  
+算定には国が定めた非常に細かくて複雑なルールがたくさんあります。  
+これらの算定ルール及び、単位数表の関係を図式化したものを「算定構造」と呼びます。  
+この算定構造は表形式でまとめられています。
+
+</Transform>
+
+---
+
+# 宣伝
+
+算定構造の作り方のエッセンスを紹介しました
+
+<OgpImage url="https://www.docswell.com/s/katzumi/KLQL3Q-decision-table-implementation-tips" />
+
+
+---
+
+# 法改正の難しさ
+
+大規模な法改正（報酬改定）が3年毎にあります
+
+- 情報公開から実装完了まで約3ヶ月
+- 算定ルール（報酬体系）が大幅に見直しされる
+- 年々複雑化  
+算定パターン数が3倍になるケースもある
+- 過去5年間は再請求の為にロジックを残さないといけない
+- 改正内容の影響範囲が広範囲にわたる  
+改正は請求（報酬単価の見直し）だけでなく、支援内容・実績記録すべてを変える  
+→ システム全体が連鎖的に影響を受ける
+
+---
+
+# レセプト業務のプロセス特有の構造上の問題
+データの流れ = 依存の方向となる
+
+<img src="/rezept-data-flow.svg" />
+
+---
+layout: two-cols-header
+---
+
+
+# レセプトの開発の辛み
+この矛盾にお気づき頂けますでしょうか。。
+
+レセプト業務は:
+- ビジネスの生命線
+- 最も複雑でミスの影響が大きい
+- <span v-mark="{ at: 3, color: 'orange', type: 'highlight' }">パターン数が多く、テストに時間がかかる</span>
+- 最も安定させるべき
+
+なのに、「下流」に位置している。
+
+::left::
+
+上流（実績データ）:
+- 各プロダクトが使いやすさを追求
+- <span v-mark="{ at: 1, color: 'orange', type: 'circle' }">仕様確定に時間がかかる</span>
+- 変更が頻繁
+
+::right::
+
+下流（レセプト）:
+- <span v-mark="{ at: 2, color: 'orange', type: 'underline' }">上流の影響を直接受ける</span>  
+算定ルールが実績データと密結合となる
+- 最も不安定な位置に
+
+---
+
+# 法改正の難しさ（再掲）
+
+大規模な法改正（報酬改定）が3年毎にあります
+
+- <span v-mark="{ at: 2, color: 'orange', type: 'highlight' }">情報公開から実装完了まで約3ヶ月</span>
+- 算定ルール（報酬体系）が大幅に見直しされる
+- 年々複雑化  
+算定パターン数が3倍になるケースもある
+- 過去5年間は再請求の為にロジックを残さないといけない
+- <span v-mark="{ at: 1, color: 'orange', type: 'highlight' }">改正内容の影響範囲が広範囲にわたる</span>  
+改正は請求（報酬単価の見直し）だけでなく、支援内容・実績記録すべてを変える  
+→ システム全体が連鎖的に影響を受ける
+
+<v-clicks>
+
+<div class="speech-bubble">
+改修ボリューム的に1チームで完結しない。関心事も様々で混在し絡み合っている
 </div>
 
----
-
-# Motions
-
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }"
-  :click-3="{ x: 80 }"
-  :leave="{ x: 1000 }"
->
-  Slidev
+</v-clicks>
+<v-clicks at=2>
+<div class="speech-bubble">
+実績データの仕様Fixをまってからレセプト機能を実装していたら、間に合わなくなる！
 </div>
-```
-
-<div class="w-60 relative">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 30, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn more](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
-
-<div h-3 />
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{aligned}
-\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \vec{B} &= 0 \\
-\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
-\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
-$$
-
-[Learn more](https://sli.dev/features/latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
-
----
-foo: bar
-dragPos:
-  square: 691,32,167,_,-16
----
-
-# Draggable Elements
-
-Double-click on the draggable elements to edit their positions.
-
-<br>
-
-###### Directive Usage
-
-```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-```
-
-<br>
-
-###### Component Usage
-
-```md
-<v-drag text-3xl>
-  <div class="i-carbon:arrow-up" />
-  Use the `v-drag` component to have a draggable container!
-</v-drag>
-```
-
-<v-drag pos="618,206,261,_,-15">
-  <div text-center text-3xl border border-main rounded>
-    Double-click me!
-  </div>
-</v-drag>
-
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-
-###### Draggable Arrow
-
-```md
-<v-drag-arrow two-way />
-```
-
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
-
----
-src: ./pages/imported-slides.md
-hide: false
----
-
----
-
-# Monaco Editor
-
-Slidev provides built-in Monaco Editor support.
-
-Add `{monaco}` to the code block to turn it into an editor:
-
-```ts {monaco}
-import { ref } from 'vue'
-import { emptyArray } from './external'
-
-const arr = ref(emptyArray(10))
-```
-
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
-
-```ts {monaco-run}
-import { version } from 'vue'
-import { emptyArray, sayHello } from './external'
-
-sayHello()
-console.log(`vue ${version}`)
-console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
-```
+</v-clicks>
 
 ---
 layout: center
 class: text-center
 ---
 
-# Learn More
+# 😰 どうすれば。。
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+---
+layout: center
+class: text-center
+---
 
-<div class="flex justify-center">
+# 2020年から4年半の取り組みを紹介
 
-<QRCode value="https://github.com/k2tzumi/slidev-boilerplate" color="0e0c0d" image="github-mark.svg" />
+---
+layout: center
+class: text-center
+---
 
+# 先にまとめ
+2つのKey Success Factor
+
+<v-clicks>
+
+1. 関心事の分離
+2. 依存性逆転
+
+</v-clicks>
+
+---
+
+# 関心事の分離
+責務の分離、Separation Of Concerns／SOC
+
+* 責務を十分小さくする  
+修正した場合に影響範囲を限定的にする
+* 認知できるサイズとなるように分離する  
+* 修正する理由は一つにする 
+
+---
+layout: two-cols-header
+---
+
+# どういう関心事を分離していったのか？
+まずは2つの関心事を分離した
+
+* 法改正で旧制度と新制度のロジックが混ざらないようにした  
+同一の関心事を時系列で分断させ別の関心事として扱う
+* 法改正の影響がない周辺の関心事を外に出した  
+時系列で変化をしない処理（請求状態や帳票管理等）を独立させた
+
+<v-click at="1">
+
+<div class="speech-bubble">
+2021年度法改正での取り組み
 </div>
 
-<div class="flex justify-center">
+</v-click>
 
-<OgpImage url="https://github.com/k2tzumi/slidev-boilerplate" />
+::left::
 
+<v-click at="1">
+
+<OgpImage url="https://zenn.dev/litalico/articles/confronting-law-amends-with-microservices" />
+
+</v-click>
+
+::right::
+
+<v-click at="1">
+
+<OgpImage url="https://zenn.dev/litalico/articles/confronting-law-amends-with-microservices" />
+
+</v-click>
+
+---
+
+# 関心事を分離によるメリット
+どういう効果があったのか？
+
+* 法改正ロジックが追加しやすくなった  
+  * 旧制度のロジックに手を入れずに新制度を追加できるようになった  
+  旧制度を知らなくても新制度に集中して実装できる【変更容易性、理解容易性】
+  * 法改正時に新制度のみをテストすれば良くなった  
+  旧制度のロジックの修正を行わないので、新規ロジックのみをテストすれば良い【テスト容易性】
+  * 逆に不要になったロジックを削除しやすくなった    
+  青天井に複雑にならないようになった【保守性の向上】
+* モジュールとして独立させやすくなった[^1]  
+責務が明確になって、サービスとして切り出しやすくなった
+
+[^1]: あくまで印象です。実際に切り出すには、まだまだ足りない部分が多かったです
+
+---
+layout: center
+class: text-center
+---
+
+# まだ足りない
+外部環境（ビジネス拡大）の変化もあり、もっと複雑で状況的に厳しくなった
+
+### 改善点
+
+法改正のロジックを追加しやすくなった  
+テスト範囲を限定的にすることができた
+
+### 外部環境の変化
+
+請求を行うサービスが増え、関心事や関係者が分散した  
+対応領域の重複や拡大があり法改正の難易度が急上昇
+
+<v-clicks>
+
+<div class="speech-bubble">
+個別最適していっただけでは、法改正を乗り切れなくなる<br />  
+ビジネスリスクも増加
 </div>
 
-<PoweredBySlidev mt-10 />
+</v-clicks>
 
+
+---
+layout: center
+class: text-center
+---
+
+# 依存性逆転という解決
+タイトル回収
+
+依存性逆転の原則（Dependency Inversion Principle）を  
+アーキテクチャレベルで適用する
+
+---
+layout: center
+class: text-center
+---
+
+# Rezept as a Service
+レセプト業務を BaaS (Backend as a Service) 化
+
+---
+layout: two-cols-header
+---
+
+# 発想の転換 - 依存性逆転
+重要な気づき
+
+データの流れは変えられない。<v-click>でも、依存の方向は変えられる</v-click>
+
+::left::
+
+<v-click>
+
+データの流れ:  
+実績データは支援アプリからレセプトアプリへ流れる  
+→ これは変えられない
+
+</v-click>
+
+::right::
+
+<v-click>
+
+依存の方向:  
+設計上、どちらがどちらに依存するか  
+→ これは変えられる！
+
+</v-click>
+
+<v-clicks>
+
+<div class="speech-bubble">
+データの流れ ≠ 依存の方向<br />  
+依存性逆転の核心
+</div>
+
+</v-clicks>
+
+---
+
+# 実績データ → レセプト業務の依存関係
+
+<Transform :scale="0.7">
+
+<img src="/rezept-as-a-service.svg" />
+
+
+</Transform>
+
+---
+
+# 参考URL
+時系列で記事をまとめています
+
+* [法改正をマイクロサービスで立ち向かう（前編）](https://zenn.dev/litalico/articles/confronting-law-amends-with-microservices)
+* [法改正をマイクロサービスで立ち向かう（後編）](https://zenn.dev/litalico/articles/confronting-law-amends-with-microservices2)
+* [ビジネス変化に適用する為にリアーキテクティングを行うまでの話](https://zenn.dev/litalico/articles/re-architecting-rezept)
+* [スキーマ駆動開発を支える開発プロセス＆ツール群](https://zenn.dev/litalico/articles/re-architecting-rezept2)
+* [アーキテクチャレベルで依存性を逆転させたら最高だった話](https://zenn.dev/litalico/articles/domain-distillation)
+
+
+---
+layout: end
+---
+
+ご清聴ありがとうございました

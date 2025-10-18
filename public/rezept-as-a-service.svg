@@ -1,0 +1,166 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- 定義: グラデーションと影 -->
+  <defs>
+    <linearGradient id="raasGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#27AE60;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#229954;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="apiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498DB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980B9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="logicGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F39C12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E67E22;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="productGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9B59B6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8E44AD;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cylinderTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5DADE2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3498DB;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cylinderSide" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498DB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2874A6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-opacity="0.4"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="dataFlow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#F39C12" />
+    </marker>
+    <marker id="dependency" markerWidth="14" markerHeight="14" refX="12" refY="5" orient="auto">
+      <polygon points="0 0, 14 5, 0 10" fill="#E74C3C" />
+    </marker>
+  </defs>
+  
+  <!-- RaaS外枠 -->
+  <rect x="200" y="50" width="600" height="350" rx="20" fill="url(#raasGrad)" filter="url(#shadow)" stroke="#229954" stroke-width="4" opacity="0.95"/>
+  
+  <text x="500" y="85" font-family="Arial, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="white">
+    Rezept as a Service (上位モジュール)
+  </text>
+  
+  <!-- 算定ロジック（RaaS内・上部） -->
+  <rect x="240" y="110" width="520" height="100" rx="12" fill="url(#logicGrad)" filter="url(#shadow)" stroke="#E67E22" stroke-width="3"/>
+  <text x="500" y="145" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+    算定ロジック
+  </text>
+  <text x="500" y="170" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+    報酬算定構造の実装
+  </text>
+  <text x="500" y="193" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="white">
+    ※APIインターフェースの実績データに対して算定ルールを適用して給付費を算出
+  </text>
+  
+  <!-- 算定ロジック → APIインターフェースへの依存（大きく強調） -->
+  <line x1="500" y1="210" x2="505" y2="245" stroke="#E74C3C" stroke-width="1" marker-end="url(#dependency)" filter="url(#glow)"/>
+  
+  <text x="520" y="240" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#E74C3C">
+    インターフェースに依存
+  </text>
+  
+  <!-- APIインターフェース（RaaS内・下部） -->
+  <rect x="240" y="250" width="520" height="120" rx="12" fill="url(#apiGrad)" filter="url(#shadow)" stroke="#2980B9" stroke-width="3"/>
+  <text x="500" y="290" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+    APIインターフェース（契約定義）
+  </text>
+  <text x="500" y="320" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+    実績データの構造を定義
+  </text>
+  <text x="500" y="350" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="white">
+    ※各プロダクトはこの契約に従って実装
+  </text>
+  
+  <!-- 下位モジュール: 各プロダクト -->
+  <!-- プロダクトA -->
+  <rect x="100" y="480" width="250" height="130" rx="12" fill="url(#productGrad)" filter="url(#shadow)" stroke="#8E44AD" stroke-width="2"/>
+  <text x="225" y="510" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    プロダクトA
+  </text>
+  <text x="225" y="535" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    契約に従って実装
+  </text>
+  
+  <!-- 円柱（ストレージ）A -->
+  <ellipse cx="225" cy="565" rx="35" ry="10" fill="url(#cylinderTop)" filter="url(#shadow)"/>
+  <rect x="190" y="565" width="70" height="30" fill="url(#cylinderSide)"/>
+  <ellipse cx="225" cy="595" rx="35" ry="10" fill="url(#cylinderTop)"/>
+  <text x="225" y="584" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">
+    実績データ
+  </text>
+  
+  <!-- プロダクトB -->
+  <rect x="375" y="480" width="250" height="130" rx="12" fill="url(#productGrad)" filter="url(#shadow)" stroke="#8E44AD" stroke-width="2"/>
+  <text x="500" y="510" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    プロダクトB
+  </text>
+  <text x="500" y="535" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    契約に従って実装
+  </text>
+  
+  <!-- 円柱（ストレージ）B -->
+  <ellipse cx="500" cy="565" rx="35" ry="10" fill="url(#cylinderTop)" filter="url(#shadow)"/>
+  <rect x="465" y="565" width="70" height="30" fill="url(#cylinderSide)"/>
+  <ellipse cx="500" cy="595" rx="35" ry="10" fill="url(#cylinderTop)"/>
+  <text x="500" y="584" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">
+    実績データ
+  </text>
+  
+  <!-- プロダクトC -->
+  <rect x="650" y="480" width="250" height="130" rx="12" fill="url(#productGrad)" filter="url(#shadow)" stroke="#8E44AD" stroke-width="2"/>
+  <text x="775" y="510" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    プロダクトC
+  </text>
+  <text x="775" y="535" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    契約に従って実装
+  </text>
+  
+  <!-- 円柱（ストレージ）C -->
+  <ellipse cx="775" cy="565" rx="35" ry="10" fill="url(#cylinderTop)" filter="url(#shadow)"/>
+  <rect x="740" y="565" width="70" height="30" fill="url(#cylinderSide)"/>
+  <ellipse cx="775" cy="595" rx="35" ry="10" fill="url(#cylinderTop)"/>
+  <text x="775" y="584" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">
+    実績データ
+  </text>
+  
+  <text x="500" y="645" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#7D3C98" font-weight="bold">
+    各プロダクト（下位モジュール）
+  </text>
+  
+  <!-- データフロー（下から上） -->
+  <line x1="225" y1="555" x2="340" y2="375" stroke="#F39C12" stroke-width="4" marker-end="url(#dataFlow)" stroke-dasharray="8,4"/>
+  <line x1="500" y1="555" x2="500" y2="375" stroke="#F39C12" stroke-width="4" marker-end="url(#dataFlow)" stroke-dasharray="8,4"/>
+  <line x1="775" y1="555" x2="660" y2="375" stroke="#F39C12" stroke-width="4" marker-end="url(#dataFlow)" stroke-dasharray="8,4"/>
+  
+  <text x="50" y="470" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#F39C12">
+    データ提供 ↑
+  </text>
+  
+  <!-- ✗依存させない表示 -->
+  <text x="820" y="440" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#E74C3C">
+    ✗ 実態に依存させない ↓
+  </text>
+  <text x="820" y="458" font-family="Arial, sans-serif" font-size="12" fill="#E74C3C">
+    逆にAPIインターフェースに
+  </text>
+  <text x="820" y="473" font-family="Arial, sans-serif" font-size="12" fill="#E74C3C">
+    依存させる（依存性逆転）
+  </text>
+  
+  <!-- 重要なポイント -->
+  <rect x="50" y="665" width="900" height="30" rx="15" fill="#ECF0F1" stroke="#34495E" stroke-width="2" filter="url(#shadow)"/>
+  
+  <text x="500" y="685" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2C3E50">
+    🔑 <tspan fill="#E74C3C">算定ロジックはAPIインターフェースに依存</tspan> / <tspan fill="#2980B9">実績データの実装詳細から隔離</tspan>
+  </text>
+</svg>

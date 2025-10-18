@@ -1,0 +1,142 @@
+<svg viewBox="0 0 1100 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- 定義: グラデーションと影 -->
+  <defs>
+    <linearGradient id="upstreamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="midstreamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5A623;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D68910;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="downstreamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7ED321;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6BB01A;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333" />
+    </marker>
+    <marker id="arrowWhite" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="white" />
+    </marker>
+  </defs>
+  
+  <!-- 上流→下流ラベル（左側） -->
+  <text x="30" y="90" font-family="Arial, sans-serif" font-size="14" fill="#4A90E2" font-weight="bold">
+    ↑ 上流
+  </text>
+  <text x="30" y="330" font-family="Arial, sans-serif" font-size="14" fill="#7ED321" font-weight="bold">
+    ↓ 下流
+  </text>
+  
+  <!-- 逆三角形の構造 -->
+  <!-- 上流（広い部分）: 各種実績データ -->
+  <polygon points="80,30 520,30 450,150 150,150" fill="url(#upstreamGrad)" filter="url(#shadow)" opacity="0.9"/>
+  <text x="300" y="60" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    各種実績データ
+  </text>
+  <text x="300" y="85" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="white">
+    体制状況、サービス利用等
+  </text>
+  
+  <!-- 3つの実績データ分類 -->
+  <rect x="100" y="105" width="130" height="35" rx="5" fill="#2E5C8A" filter="url(#shadow)"/>
+  <text x="165" y="128" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">
+    利用者算定実績
+  </text>
+  
+  <rect x="235" y="105" width="130" height="35" rx="5" fill="#2E5C8A" filter="url(#shadow)"/>
+  <text x="300" y="128" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">
+    事業所算定実績
+  </text>
+  
+  <rect x="370" y="105" width="130" height="35" rx="5" fill="#2E5C8A" filter="url(#shadow)"/>
+  <text x="435" y="128" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">
+    サービス利用実績
+  </text>
+  
+  <!-- 中流: レセプト業務 -->
+  <polygon points="150,150 450,150 380,290 220,290" fill="url(#midstreamGrad)" filter="url(#shadow)"/>
+  <text x="300" y="190" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    レセプト業務
+  </text>
+  <text x="300" y="215" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+    ※上流データに依存
+  </text>
+  
+  <!-- レセプト業務内のステップ表示 -->
+  <text x="300" y="245" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+    報酬算定構造への適用
+  </text>
+  <text x="300" y="265" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+    利用者負担額調整・給付費算出
+  </text>
+  
+  <!-- 下流: 請求データ -->
+  <polygon points="220,290 380,290 340,370 260,370" fill="url(#downstreamGrad)" filter="url(#shadow)"/>
+  <text x="300" y="325" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    請求データ
+  </text>
+  <text x="300" y="345" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+    給付費、利用者請求
+  </text>
+  
+  <!-- フローの詳細説明（右側） -->
+  <rect x="580" y="20" width="500" height="410" rx="10" fill="#F8F9FA" stroke="#6C757D" stroke-width="2" filter="url(#shadow)"/>
+  <text x="830" y="50" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">
+    📋 実際の業務フロー
+  </text>
+  
+  <!-- ステップ1 -->
+  <circle cx="610" cy="90" r="18" fill="#4A90E2" filter="url(#shadow)"/>
+  <text x="610" y="96" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">1</text>
+  <text x="645" y="90" font-family="Arial, sans-serif" font-size="13" fill="#333">
+    <tspan font-weight="bold">各種支援を行った各種実績を収集</tspan>
+  </text>
+  <text x="645" y="108" font-family="Arial, sans-serif" font-size="11" fill="#666">
+    （体制状況、サービス利用等 → 利用者/事業所/サービス利用実績）
+  </text>
+  
+  <!-- ステップ2 -->
+  <circle cx="610" cy="165" r="18" fill="#F5A623" filter="url(#shadow)"/>
+  <text x="610" y="171" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">2</text>
+  <text x="645" y="165" font-family="Arial, sans-serif" font-size="13" fill="#333">
+    <tspan font-weight="bold">報酬算定構造に当てはめて</tspan>
+  </text>
+  <text x="645" y="183" font-family="Arial, sans-serif" font-size="13" fill="#333">
+    <tspan font-weight="bold">単位数を算出</tspan>
+  </text>
+  <text x="645" y="201" font-family="Arial, sans-serif" font-size="11" fill="#666">
+    （各種実績 + 報酬条件 → 報酬金額のベースとなる単位数）
+  </text>
+  
+  <!-- ステップ3 -->
+  <circle cx="610" cy="258" r="18" fill="#F5A623" filter="url(#shadow)"/>
+  <text x="610" y="264" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">3</text>
+  <text x="645" y="263" font-family="Arial, sans-serif" font-size="13" fill="#333">
+    <tspan font-weight="bold">利用者負担額の調整業務</tspan>
+  </text>
+  
+  <!-- ステップ4 -->
+  <circle cx="610" cy="310" r="18" fill="#7ED321" filter="url(#shadow)"/>
+  <text x="610" y="316" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">4</text>
+  <text x="645" y="310" font-family="Arial, sans-serif" font-size="13" fill="#333">
+    <tspan font-weight="bold">最終的な給付費額を算出し出力</tspan>
+  </text>
+  <text x="645" y="328" font-family="Arial, sans-serif" font-size="11" fill="#666">
+    （各種帳票（請求書等）+ 伝送データ）
+  </text>
+  
+  <!-- ステップ5 -->
+  <circle cx="610" cy="375" r="18" fill="#7ED321" filter="url(#shadow)"/>
+  <text x="610" y="381" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">5</text>
+  <text x="645" y="375" font-family="Arial, sans-serif" font-size="13" fill="#333">
+    <tspan font-weight="bold">給付費の代理受領及び</tspan>
+  </text>
+  <text x="645" y="393" font-family="Arial, sans-serif" font-size="13" fill="#333">
+    <tspan font-weight="bold">利用者負担額請求</tspan>
+  </text>
+</svg>
