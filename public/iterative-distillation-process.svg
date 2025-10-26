@@ -1,0 +1,272 @@
+<svg viewBox="0 0 1500 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowhead-purple" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#9333ea"/>
+    </marker>
+    <marker id="arrowhead-red" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#ef4444"/>
+    </marker>
+    <marker id="interface-arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#7c3aed"/>
+    </marker>
+  </defs>
+  
+  <g id="initial">
+    <rect x="50" y="40" width="300" height="400" fill="#fef2f2" stroke="#dc2626" stroke-width="3" rx="8"/>
+    <text x="200" y="80" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">
+      初期状態
+    </text>
+    <text x="200" y="105" text-anchor="middle" font-size="14" fill="#dc2626">
+      複雑性が混在 (密結合)
+    </text>
+    
+    <circle cx="200" cy="230" r="100" fill="#fcd34d" opacity="0.6" stroke="#d97706" stroke-width="4"/>
+    <text x="200" y="230" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">Core</text>
+    <text x="200" y="255" text-anchor="middle" font-size="14" fill="#1a1a1a">(巨大)</text>
+    
+    <circle cx="140" cy="190" r="50" fill="#93c5fd" opacity="0.6" stroke="#2563eb" stroke-width="2"/>
+    <text x="110" y="175" font-size="12" fill="#1a1a1a">関心事A</text>
+    
+    <circle cx="260" cy="190" r="50" fill="#86efac" opacity="0.6" stroke="#16a34a" stroke-width="2"/>
+    <text x="275" y="175" font-size="12" fill="#1a1a1a">関心事B</text>
+    
+    <circle cx="260" cy="270" r="50" fill="#c084fc" opacity="0.6" stroke="#9333ea" stroke-width="2"/>
+    <text x="275" y="285" font-size="12" fill="#1a1a1a">関心事C</text>
+    
+    <circle cx="140" cy="270" r="50" fill="#fca5a5" opacity="0.6" stroke="#ef4444" stroke-width="2"/>
+    <text x="110" y="285" font-size="12" fill="#1a1a1a">関心事D</text>
+    
+    <text x="200" y="340" text-anchor="middle" font-size="14" fill="#dc2626" font-weight="bold">
+      重なり: 最大
+    </text>
+    <text x="200" y="365" text-anchor="middle" font-size="13" fill="#dc2626">
+      結合度: 非常に高
+    </text>
+    <text x="200" y="390" text-anchor="middle" font-size="13" fill="#dc2626">
+      境界: 曖昧
+    </text>
+    <text x="200" y="420" text-anchor="middle" font-size="12" fill="#666">
+      認知サイズ: 非常に大
+    </text>
+  </g>
+  
+  <path d="M 360 240 L 400 240" stroke="#666" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <g id="method1">
+    <rect x="410" y="40" width="300" height="400" fill="#f0fdf4" stroke="#16a34a" stroke-width="3" rx="8"/>
+    <text x="560" y="80" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">
+      方法1: 関心事の抽出
+    </text>
+    <text x="560" y="105" text-anchor="middle" font-size="14" fill="#16a34a">
+      Core内から別の関心事を分割
+    </text>
+    
+    <circle cx="560" cy="240" r="70" fill="#fcd34d" opacity="0.75" stroke="#d97706" stroke-width="4"/>
+    <text x="560" y="240" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">Core</text>
+    <text x="560" y="260" text-anchor="middle" font-size="13" fill="#1a1a1a">(小さい)</text>
+    
+    <circle cx="500" cy="160" r="40" fill="#86efac" opacity="0.7" stroke="#16a34a" stroke-width="2" stroke-dasharray="4,2"/>
+    <text x="475" y="150" font-size="11" fill="#16a34a">抽出</text>
+    <text x="495" y="170" font-size="12" fill="#1a1a1a">B</text>
+    
+    <circle cx="490" cy="250" r="45" fill="#93c5fd" opacity="0.5" stroke="#2563eb" stroke-width="2"/>
+    <text x="480" y="260" font-size="11" fill="#1a1a1a">A</text>
+    
+    <circle cx="630" cy="210" r="45" fill="#c084fc" opacity="0.5" stroke="#9333ea" stroke-width="2"/>
+    <text x="640" y="220" font-size="11" fill="#1a1a1a">C</text>
+    
+    <circle cx="570" cy="320" r="45" fill="#fca5a5" opacity="0.5" stroke="#ef4444" stroke-width="2"/>
+    <text x="560" y="330" font-size="11" fill="#1a1a1a">D</text>
+    
+    <text x="560" y="350" text-anchor="middle" font-size="14" fill="#16a34a" font-weight="bold">
+      重なり: 大幅減
+    </text>
+    <text x="560" y="375" text-anchor="middle" font-size="13" fill="#16a34a">
+      結合度: 改善
+    </text>
+    <text x="560" y="420" text-anchor="middle" font-size="12" fill="#666">
+      認知サイズ: 中
+    </text>
+  </g>
+  
+  <path d="M 720 240 L 760 240" stroke="#666" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <g id="method2">
+    <rect x="770" y="40" width="300" height="400" fill="#eff6ff" stroke="#3b82f6" stroke-width="3" rx="8"/>
+    <text x="920" y="80" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">
+      方法2: 処理の移譲
+    </text>
+    <text x="920" y="105" text-anchor="middle" font-size="14" fill="#3b82f6">
+      重なり部分を他に移す
+    </text>
+    
+    <circle cx="920" cy="240" r="55" fill="#fcd34d" opacity="0.85" stroke="#d97706" stroke-width="4"/>
+    <text x="920" y="240" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a">Core</text>
+    <text x="920" y="260" text-anchor="middle" font-size="12" fill="#1a1a1a">(最小化)</text>
+    
+    <path d="M 880 210 L 850 180" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,3"/>
+    <circle cx="845" cy="175" r="4" fill="#3b82f6"/>
+    <text x="820" y="160" font-size="11" fill="#3b82f6">移譲</text>
+    
+    <circle cx="850" cy="195" r="35" fill="#93c5fd" opacity="0.5" stroke="#2563eb" stroke-width="2"/>
+    <text x="845" y="200" font-size="11" fill="#1a1a1a">A</text>
+    
+    <circle cx="980" cy="205" r="35" fill="#c084fc" opacity="0.5" stroke="#9333ea" stroke-width="2"/>
+    <text x="975" y="210" font-size="11" fill="#1a1a1a">C</text>
+    
+    <circle cx="880" cy="310" r="35" fill="#fca5a5" opacity="0.5" stroke="#ef4444" stroke-width="2"/>
+    <text x="875" y="315" font-size="11" fill="#1a1a1a">D</text>
+    
+    <text x="920" y="350" text-anchor="middle" font-size="14" font-weight="bold" fill="#3b82f6">
+      重なり: 小
+    </text>
+    <text x="920" y="375" text-anchor="middle" font-size="13" fill="#3b82f6">
+      結合度: 低
+    </text>
+    <text x="920" y="400" text-anchor="middle" font-size="13" fill="#3b82f6">
+      境界: 明確化
+    </text>
+    <text x="920" y="420" text-anchor="middle" font-size="12" fill="#666">
+      認知サイズ: 小
+    </text>
+  </g>
+  
+  <path d="M 1080 240 L 1120 240" stroke="#666" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <g id="final">
+    <rect x="1130" y="40" width="300" height="400" fill="#fefce8" stroke="#eab308" stroke-width="4" rx="8"/>
+    <text x="1280" y="80" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">
+      依存性逆転 (DIP)
+    </text>
+    <text x="1280" y="105" text-anchor="middle" font-size="14" fill="#eab308">
+      重なりをインターフェース境界として分離
+    </text>
+    
+    <circle cx="1280" cy="240" r="60" fill="#fcd34d" opacity="0.98" stroke="#d97706" stroke-width="5"/>
+    <text x="1280" y="235" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">Core</text>
+    <text x="1280" y="260" text-anchor="middle" font-size="13" fill="#1a1a1a">(Pure)</text>
+    
+    <path d="M 1240 200 A 10 10 0 0 1 1250 190 L 1255 195 A 10 10 0 0 1 1235 205 Z" fill="#7c3aed" stroke="#7c3aed" stroke-width="3"/>
+    <circle cx="1245" cy="195" r="8" fill="#7c3aed"/>
+    <text x="1215" y="180" font-size="10" fill="#7c3aed" font-weight="bold">I/F A</text>
+    
+    <circle cx="1315" cy="195" r="8" fill="#7c3aed"/>
+    <text x="1325" y="180" font-size="10" fill="#7c3aed" font-weight="bold">I/F C</text>
+    
+    <circle cx="1260" cy="295" r="8" fill="#7c3aed"/>
+    <text x="1235" y="310" font-size="10" fill="#7c3aed" font-weight="bold">I/F D</text>
+    
+    <circle cx="1180" cy="150" r="35" fill="#93c5fd" opacity="0.5" stroke="#2563eb" stroke-width="2"/>
+    <text x="1175" y="155" font-size="12" fill="#1a1a1a">A</text>
+    <path d="M 1205 170 L 1230 190" stroke="#7c3aed" stroke-width="3" marker-end="url(#interface-arrow)"/>
+    
+    <circle cx="1380" cy="150" r="35" fill="#c084fc" opacity="0.5" stroke="#9333ea" stroke-width="2"/>
+    <text x="1375" y="155" font-size="12" fill="#1a1a1a">C</text>
+    <path d="M 1355 170 L 1329 190" stroke="#7c3aed" stroke-width="3" marker-end="url(#interface-arrow)"/>
+    
+    <circle cx="1200" cy="340" r="35" fill="#fca5a5" opacity="0.5" stroke="#ef4444" stroke-width="2"/>
+    <text x="1195" y="345" font-size="12" fill="#1a1a1a">D</text>
+    <path d="M 1225 318 L 1250 305" stroke="#7c3aed" stroke-width="3" marker-end="url(#interface-arrow)"/>
+    
+    <text x="1280" y="350" text-anchor="middle" font-size="14" fill="#7c3aed" font-weight="bold">
+      重なり→インターフェースに集約
+    </text>
+    <text x="1280" y="375" text-anchor="middle" font-size="13" fill="#7c3aed">
+      全ての関心事がI/Fに依存
+    </text>
+    <text x="1280" y="400" text-anchor="middle" font-size="13" fill="#7c3aed">
+      結合度: 最小 (安定)
+    </text>
+    <text x="1280" y="420" text-anchor="middle" font-size="12" fill="#16a34a" font-weight="bold">
+      並行開発/交換容易
+    </text>
+  </g>
+  
+  <rect x="50" y="480" width="1380" height="230" fill="#f8fafc" stroke="#475569" stroke-width="2" rx="8"/>
+  <text x="740" y="515" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a1a1a">
+    蒸留のプロセスと原則
+  </text>
+  
+  <text x="80" y="550" font-size="15" fill="#1a1a1a" font-weight="bold">
+    方法1: 関心事の抽出
+  </text>
+  <text x="90" y="575" font-size="14" fill="#1a1a1a">
+    • Core内に混在している<tspan font-weight="bold">別の関心事</tspan>を見つけ、<tspan font-weight="bold">分割して独立</tspan>させる。
+  </text>
+  <text x="90" y="595" font-size="14" fill="#1a1a1a">
+    • 結果: <tspan font-weight="bold">Coreが小さくなり</tspan>、関心事Bが外部に抽出されたことで重なりが大幅に減る。
+  </text>
+  
+  <text x="730" y="550" font-size="15" fill="#1a1a1a" font-weight="bold">
+    方法2: 処理の移譲
+  </text>
+  <text x="740" y="575" font-size="14" fill="#1a1a1a">
+    • 残った重なり部分の<tspan font-weight="bold">処理を他の関心事に移譲</tspan>し、Coreは<tspan font-weight="bold">本質的な責務のみ</tspan>に集中する。
+  </text>
+  <text x="740" y="595" font-size="14" fill="#1a1a1a">
+    • 結果: <tspan font-weight="bold">Coreがさらに最小化</tspan>され、他の関心事との境界が明確化し、重なりがほぼ解消される。
+  </text>
+  
+  <rect x="70" y="620" width="1300" height="80" fill="#e0f2fe" stroke="#0284c7" stroke-width="1" rx="5"/>
+  <text x="80" y="645" font-size="15" fill="#0284c7" font-weight="bold">
+    💡 重要な原則: 依存性逆転の適用 (最終段階)
+  </text>
+  <text x="90" y="670" font-size="14" fill="#1a1a1a">
+    • Coreと関心事の間の<tspan font-weight="bold">僅かな接点をI/F（突起）</tspan>として明確化。これにより<tspan font-weight="bold">Coreのみが残り</tspan>、他はI/Fに依存する。
+  </text>
+  <text x="90" y="690" font-size="14" fill="#1a1a1a">
+    • Coreを安定させ、関心事の変更がCoreに影響を与えない<tspan font-weight="bold">安定した依存関係</tspan>を構築する。
+  </text>
+  
+  <rect x="50" y="730" width="1380" height="200" fill="#ffffff" stroke="#94a3b8" stroke-width="1" rx="5"/>
+  <text x="740" y="765" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">
+    図の見方
+  </text>
+  
+  <g transform="translate(100, 775)">
+    <circle cx="20" cy="15" r="15" fill="#fcd34d" opacity="0.8" stroke="#d97706" stroke-width="2"/>
+    <text x="50" y="22" font-size="14" fill="#1a1a1a">Core（コアドメイン）- 最も重要な関心事</text>
+  </g>
+  
+  <g transform="translate(100, 815)">
+    <circle cx="20" cy="15" r="15" fill="#93c5fd" opacity="0.6" stroke="#2563eb" stroke-width="2"/>
+    <text x="50" y="22" font-size="14" fill="#1a1a1a">他の関心事（サブドメイン）</text>
+  </g>
+  
+  <g transform="translate(100, 855)">
+    <circle cx="15" cy="15" r="12" fill="#fcd34d" opacity="0.6"/>
+    <circle cx="25" cy="15" r="12" fill="#93c5fd" opacity="0.6"/>
+    <text x="50" y="22" font-size="14" fill="#1a1a1a">円の重なり = 結合度（小さいほど疎結合）</text>
+  </g>
+  
+  <g transform="translate(100, 895)">
+    <circle cx="20" cy="15" r="10" fill="#7c3aed" stroke="#7c3aed" stroke-width="2"/>
+    <text x="50" y="22" font-size="14" fill="#1a1a1a">突起（I/F）= Coreが提供するインターフェース</text>
+  </g>
+  
+  <g transform="translate(750, 775)">
+    <path d="M 0 15 L 40 15" stroke="#16a34a" stroke-width="2" stroke-dasharray="4,2"/>
+    <text x="50" y="22" font-size="14" fill="#1a1a1a">抽出 = Core内から別の関心事を分割</text>
+  </g>
+  
+  <g transform="translate(750, 815)">
+    <path d="M 0 15 L 40 15" stroke="#3b82f6" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="50" y="22" font-size="14" fill="#1a1a1a">移譲 = 処理を他の関心事に移す</text>
+  </g>
+  
+  <g transform="translate(750, 855)">
+    <path d="M 0 15 L 30 15" stroke="#7c3aed" stroke-width="3" marker-end="url(#interface-arrow)"/>
+    <text x="50" y="22" font-size="14" fill="#1a1a1a">依存の方向 = 関心事がI/Fに依存</text>
+  </g>
+  
+  <g transform="translate(750, 895)">
+    <rect x="0" y="5" width="35" height="20" fill="none" stroke="#dc2626" stroke-width="3" rx="3"/>
+    <text x="50" y="22" font-size="14" fill="#1a1a1a">赤枠 = 密結合・不安定な状態</text>
+  </g>
+</svg>

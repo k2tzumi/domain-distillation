@@ -16,6 +16,12 @@ drawings:
   persist: false
 # slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: slide-left
+seoMeta:
+  ogImage: auto
+# duration of the presentation, default is '30min'
+duration: 30min
+# timer mode, can be 'countdown' or 'stopwatch', default is 'stopwatch'
+timer: stopwatch
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 addons:
@@ -548,7 +554,6 @@ Before:
 After:
 - レセプト業務の本質的な責務（算定基準）にのみ集中
 - 外部の動向を気にしなくていい
-
 </v-click>
 
 <v-click at="1">
@@ -656,6 +661,201 @@ After:
 </div>
 
 </v-click>
+
+---
+layout: center
+class: text-center
+---
+
+# 振り返り
+2つのKey Success Factor
+
+
+1. 関心事の分離
+2. 依存性逆転
+
+---
+layout: center
+class: text-center
+---
+
+# なぜこの順番だったのか？
+
+---
+transition: go-forward | go-backward
+---
+
+# なぜ関心事の分離が必要だったのか？
+依存性逆転の前に、まず関心事の分離が必要
+
+<v-clicks>
+
+1. 認知サイズが大きすぎる  
+   → 人間が一度に扱える複雑さには限界がある。全体を把握できない
+   
+2. 境界が不明確  
+   → どこで切るべきか分からない。分離により、何が「上位」で何が「下位」かが見える
+   
+3. 関心事が混在している  
+   → インターフェースが複雑になる。単一責務の原則に反し、リスクも大きくなる  
+
+</v-clicks>
+
+<v-click at="4">
+
+<div class="speech-bubble">
+まず認知サイズを削減してから、<br />
+次のステップへ進む
+
+これが現実的なアプローチ
+</div>
+
+</v-click>
+
+
+---
+
+# 段階的なアプローチ
+
+<Transform :scale="0.8">
+
+<img src="./public/iterative-distillation-process.svg" />
+
+</Transform>
+
+---
+layout: center
+class: text-center
+---
+
+# もっと重要なこと
+
+---
+layout: center
+class: text-center
+---
+
+# コアドメインの見極め
+
+---
+layout: center
+class: text-center
+---
+
+# コアドメインとは？
+
+製品やサービスで最も重要で、競争優位性の源泉となる中核的な業務領域です。ビジネス上の差別化を図る部分
+
+---
+layout: center
+class: text-center
+---
+
+# よくわからん
+
+---
+
+# ダブルダイヤモンド
+
+<Transform :scale="0.8">
+
+<img src="./public/double_diamond.svg" />
+
+</Transform>
+
+---
+layout: center
+class: text-center
+---
+
+# 問題領域に向き合う必要がある
+左のダイヤモンド。解くべき問題を定める
+
+---
+layout: center
+class: text-center
+---
+
+# 問題領域の定義したものは戦略となる
+逆に解決領域の提供が戦術となる。戦略を実現する為の戦術という位置づけ
+
+---
+
+# 今回の問題の洗い出し
+
+* 法改正のたびに大きく変わるが、旧制度のルールは壊してはいけない
+* 法令知識を持ってないとメンテナンスができない
+  * 認知負荷が高すぎる。開発者全員が深い法令知識があるわけではない
+  * 法令に関する影響範囲が分散してしまうと、法改正時の修正漏れが発生する
+* 請求業務のテストパターンが膨大だが、構造的に後回しになってしまう
+* 法改正のシステム対応が間に合わないと、請求ができなくなる  
+間違って請求した場合のインパクトも大  
+
+<v-click>
+
+<div class="speech-bubble">
+【コアドメインの判断軸】<br />
+1. 複雑で、頻繁に変更される<br />
+2. 知識が凝縮され、暗黙知が多い<br />
+3. 壊れた時の影響が最も大きい<br />
+4. 分散させると問題になる
+</div>
+
+</v-click>
+
+
+---
+
+# 解くべき問題に対する戦略
+
+* 法改正毎の算定ルールを分けて管理する  
+全制度を知っていなくても開発ができる。  
+旧制度に影響がない状態にする（開放/閉鎖の原則）
+* レセプト業務の関心事を凝集して管理する  
+複雑さをシステム全体に拡散させない
+* レセプト業務の知識（算定基準）を専門性を持つチームに集中させる  
+他チームは法令知識の内、運営基準・体制基準にフォーカスさせる
+
+
+---
+layout: center
+class: text-center
+---
+
+# 今回のコアドメイン
+
+* レセプト業務をコアドメインとして、Rezept as a Serviceを構築する【投資判断】
+
+---
+
+# 戦略に対する戦術
+２回のリアーキテクチャの取り組みが戦術となる
+
+* 時系列でAPIをルーティングさせる
+* スキーマ駆動開発
+
+<v-click>
+
+<div class="speech-bubble">
+これらも戦術<br />
+* APIシナリオテスト（runn）<br />
+* バージョン管理・リリースフローの整備（tagpr）<br />
+* APIインターフェースの品質向上（eg-r2）<br />
+</div>
+
+<OgpImage url="https://zenn.dev/litalico/articles/re-architecting-rezept2" />
+
+</v-click>
+
+
+---
+layout: center
+class: text-center
+---
+
+# まとめ
+
+* (TODO)
 
 ---
 
