@@ -988,7 +988,7 @@ class: text-center
   >
     <h3 class="text-3xl font-bold text-green-300 mb-4">🟢 After (自立と集中)</h3>
     <ul class="list-disc list-inside text-xl space-y-3 text-left">
-      <li><span class="font-bold">Rezepte as a Service</span>として提供</li>
+      <li><span class="font-bold">Rezept as a Service</span>として提供</li>
       <li>各プロダクトチームは<span class="font-bold">自身のペースで開発可能</span></li>
       <li><span class="font-bold">ドキュメント</span>を見て自分で実装・デプロイ</li>
       <li><span class="font-bold">不要な調整が減り</span>、本質的な開発に集中</li>
