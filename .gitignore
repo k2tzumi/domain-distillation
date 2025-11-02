@@ -12,3 +12,5 @@ slides-export-notes.pdf
 .vite
 .textlintcache
 og-image.png
+public/assets/fonts
+.slidev/snapshots/snapshots.json
