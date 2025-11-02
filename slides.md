@@ -54,10 +54,6 @@ v0.0.1
   <img src="https://phpcon.fukuoka.jp/2025/images/echo/4.png" class="h-60 w-auto" alt="公式ロゴ" />
 </div>
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
 ---
 transition: fade-out
 layout: two-cols-header
@@ -152,13 +148,9 @@ transition: fade-out
 <br />
 <a href="https://x.com/search?q=%23phpconfuk%20%23hall_d&f=live">#phpconfuk #hall_d</a>
 
-<!--
-いっぱい呟いてください
--->
-
 ---
 
-# 本日のお話すること
+# <carbon-presentation-file /> 本日のお話すること
 とある複雑なドメインを扱うシステムの物語です。集大成的なお話をします
 
 * レセプト業務という複雑なドメインで、2 度の大規模法改正に立ち向かった実体験です。
@@ -184,7 +176,7 @@ transition: fade-out
 transition: fade-out
 ---
 
-# レセプト業務の複雑さを視覚化
+# <mdi-library /> レセプト業務の複雑さを視覚化
 
 圧巻の 1.5K 頁オーバー。3 年に 1 回、大改訂（大改定）があります
 
@@ -200,7 +192,7 @@ image: /ISBN-978-4824300867.png
 transition: slide-up
 ---
 
-# 厚い本が更に厚くなる
+# <f7-square-stack-3d-up-fill /> 厚い本が更に厚くなる
 手に取って持ち運べるような、携帯に便利な手引書感がまったくない、改訂版がこちら
 
 なぜか３部作にｗ  
@@ -209,21 +201,19 @@ transition: slide-up
 
 ---
 
-# 「レセプト業務」って何？
+# <carbon-help /> 「レセプト業務」って何？
 医療で言うところの診療報酬明細書（医療点数が書かれているアレ）を作成するお仕事です
 
 <Transform :scale="1.2">
 
-* **🧾 概要**  
-障害福祉サービスや介護事業所で提供されたサービスの費用を計算し、  
+* **🧾 概要** 障害福祉サービスや介護事業所で提供されたサービスの費用を計算し、  
 市町村や国保連などの支払い機関に請求する業務です。  
 利用者は費用の一部（利用者負担額）を支払い、  
 残りの公費・保険負担分を正確に計算し請求するのが重要な役割です。  
 計算の基となるのは、サービス内容に応じて定められた「単位数」です。  
 これは「単位数表」で定義されています。  
 
-* **🗂️ 計算ルールをまとめたもの=単位数表を図式化したもの＝算定構造**  
-単位数を計算するプロセスを「算定」と呼びます。  
+* **🗂️ 計算ルールをまとめたもの=単位数表を図式化したもの＝算定構造** 単位数を計算するプロセスを「算定」と呼びます。  
 算定には国が定めた非常に細かくて複雑なルールがたくさんあります。  
 これらの算定ルール及び、単位数表の関係を図式化したものを「算定構造」と呼びます。  
 この算定構造は表形式でまとめられています。
@@ -236,7 +226,7 @@ class: text-center
 zoom: 2.0
 ---
 
-# 宣伝
+# <carbon-bullhorn /> 宣伝
 
 算定構造の作り方のエッセンスを紹介しました
 
@@ -245,7 +235,7 @@ zoom: 2.0
 
 ---
 
-# 法改正の難しさ
+# <carbon-warning-alt /> 法改正の難しさ
 
 大規模な法改正（報酬改定）が 3 年毎にあります
 
@@ -260,7 +250,7 @@ zoom: 2.0
 
 ---
 
-# レセプト業務のプロセス特有の構造上の問題
+# <carbon-flow /> レセプト業務のプロセス特有の構造上の問題
 データの流れ = 依存の方向となる
 
 <img src="/rezept-data-flow.svg" />
@@ -270,7 +260,7 @@ layout: two-cols-header
 ---
 
 
-# レセプトの開発の辛み
+# <carbon-face-dissatisfied /> レセプトの開発の辛み
 この矛盾にお気づき頂けますでしょうか。。
 
 レセプト業務は:
@@ -311,7 +301,7 @@ layout: two-cols-header
 
 ---
 
-# 法改正の難しさ（再掲）
+# <carbon-warning-alt /> 法改正の難しさ（再掲）
 
 大規模な法改正（報酬改定）が 3 年毎にあります
 
@@ -351,7 +341,7 @@ class: text-center
 zoom: 1.5
 ---
 
-# 2020年から4年半の取り組みを紹介
+# <carbon-time /> 2020年から4年半の取り組みを紹介
 
 ---
 layout: center
@@ -359,7 +349,7 @@ class: text-center
 zoom: 2.0
 ---
 
-# 先にまとめ
+# <carbon-summary-kpi /> 先にまとめ
 2 つの Key Success Factor
 
 <v-clicks>
@@ -373,7 +363,7 @@ zoom: 2.0
 zoom: 1.5
 ---
 
-# 関心事の分離
+# <carbon-cut-out /> 関心事の分離
 責務の分離、Separation Of Concerns／SOC
 
 * 責務を十分小さくする  
@@ -385,7 +375,7 @@ zoom: 1.5
 layout: two-cols-header
 ---
 
-# どういう関心事を分離していったのか？
+# <carbon-cut-out /> どういう関心事を分離していったのか？
 まずは 2 つの関心事を分離した
 
 * 法改正で旧制度と新制度のロジックが混ざらないようにした  
@@ -422,7 +412,7 @@ class: py-10
 glowSeed: 215
 ---
 
-# 関心事の分離によるメリット
+# <carbon-chart-3d /> 関心事の分離によるメリット
 
 <span>法改正への対応とシステムの健全性向上</span>
 
@@ -554,7 +544,7 @@ layout: center
 class: text-center
 ---
 
-# リアーキテクチャは成功 ✨
+# <carbon-task-complete /> リアーキテクチャは成功 ✨
 
 関心事の分離により、1つのサービスの安定性は大きく改善されました。
 
@@ -615,7 +605,7 @@ layout: center
 class: text-center
 ---
 
-# 外部環境の変化と新たな課題 🚧
+# <carbon-ibm-data-product-exchange /> 外部環境の変化と新たな課題
 
 法改正を乗り越えて安心していたら今度は**ビジネスが拡大**しました。
 
@@ -696,7 +686,7 @@ class: text-center
 zoom: 1.8
 ---
 
-# 依存性逆転という解決💡
+# <arcticons-emoji-electric-light-bulb /> 依存性逆転という解決
 タイトル回収
 
 依存性逆転の原則（Dependency Inversion Principle）を  
@@ -710,7 +700,7 @@ class: text-center
 zoom: 1.9
 ---
 
-# Rezept as a Service
+# <carbon-receipt /> Rezept as a Service
 レセプト業務を BaaS (Backend as a Service) 化
 
 
@@ -719,7 +709,7 @@ layout: center
 class: text-center
 ---
 
-# 発想の転換 - 依存性逆転 🔄
+# <carbon-arrows-horizontal /> 発想の転換 - 依存性逆転
 
 <div mt-8 text-2xl>
   重要な気づき：
@@ -769,7 +759,7 @@ class: text-center
 layout: default
 ---
 
-# 実績データ → レセプト業務の依存関係
+# <carbon-diagram /> 実績データ → レセプト業務の依存関係
 
 <Transform :scale="0.7">
 
@@ -784,7 +774,7 @@ layout: center
 class: text-center
 ---
 
-# 依存性逆転の効果 ✨
+# <carbon-analytics /> 依存性逆転の効果 ✨
 
 <div mt-8 text-2xl>
   発想の転換によって、何が変わったか？
@@ -844,7 +834,7 @@ class: text-center
 zoom: 2.0
 ---
 
-# 何が最高だったのか？
+# <carbon-face-activated /> 何が最高だったのか？
 当初想定していた以上の効果
 
 ---
@@ -852,7 +842,7 @@ layout: center
 class: text-center
 ---
 
-# 1. 責務が明確になり、関心事にのみ集中 🎯
+# <carbon-text-clear-format /> 1. 責務が明確になり、関心事にのみ集中 🎯
 
 <div mt-8 text-2xl>
   この効果は、実績データを蓄積するクライアント（支援アプリなど）にも波及
@@ -906,7 +896,7 @@ layout: center
 class: text-center
 ---
 
-# 2. I/F仕様書に向き合ってテストできる 🧪
+# <carbon-test-tool /> 2. I/F仕様書に向き合ってテストできる 🧪
 
 <div mt-8 text-2xl>
   依存性逆転は、<span class="font-bold">テスト設計</span>にも大きな効果がある
@@ -962,7 +952,7 @@ layout: center
 class: text-center
 ---
 
-# 3. コミュニケーションコストを最低限に 📞⬇️
+# <carbon-chat-bot /> 3. コミュニケーションコストを最低限に⬇️
 
 <div mt-8 text-2xl>
   依存性逆転は、<span class="font-bold">組織的な開発効率</span>も大きく改善
@@ -1018,7 +1008,7 @@ layout: center
 class: text-center
 ---
 
-# 4. システム全体の開発アジリティ向上 🚀
+# <carbon-train-speed /> 4. システム全体の開発アジリティ向上
 
 <div mt-8 text-2xl>
   レセプト業務の「安定」は、<span class="font-bold">プロジェクト全体のスピード</span>に繋がる
@@ -1075,7 +1065,7 @@ class: text-center
 zoom: 2.0
 ---
 
-# 振り返り
+# <carbon-review /> 振り返り
 2 つの Key Success Factor
 
 
@@ -1088,14 +1078,14 @@ class: text-center
 zoom: 2.0
 ---
 
-# なぜこの順番だったのか？ 🤔
+# <carbon-query /> なぜこの順番だったのか？ 🤔
 
 
 ---
 layout: default
 ---
 
-# なぜ関心事の分離が必要だったのか？
+# <carbon-query /> なぜ関心事の分離が必要だったのか？
 依存性逆転の前に、まず関心事の分離が必要
 
 <v-clicks>
@@ -1126,7 +1116,7 @@ layout: default
 zoom: 0.8
 ---
 
-# 初期状態
+# <carbon-shape-except /> 初期状態
 
 <div class="text-red-600 text-xl">複雑性が混在（密結合）</div>
 
@@ -1204,7 +1194,7 @@ zoom: 0.8
 zoom: 0.8
 ---
 
-# 方法1: 関心事の抽出
+# <carbon-bring-forward /> 方法1: 関心事の抽出
 
 <div class="text-green-600 text-xl">Core内から別の関心事を分割</div>
 
@@ -1269,7 +1259,7 @@ zoom: 0.8
 zoom: 0.8
 ---
 
-# 方法2: 処理の移譲
+# <carbon-send-to-back /> 方法2: 処理の移譲
 
 <div class="text-blue-600 text-xl">重なり部分を他に移す</div>
 
@@ -1323,7 +1313,7 @@ zoom: 0.8
 zoom: 0.8
 ---
 
-# 依存性逆転 (DIP)
+# <carbon-connect-recursive /> 依存性逆転 (DIP)
 
 <div class="text-amber-700 text-xl">重なりをインターフェース境界として分離</div>
 
@@ -1374,7 +1364,7 @@ class: text-center
 zoom: 2.0
 ---
 
-# もっと重要なこと
+# <carbon-star-review /> もっと重要なこと
 
 ---
 layout: center
@@ -1382,7 +1372,7 @@ class: text-center
 zoom: 2.0
 ---
 
-# コアドメインの見極め
+# <carbon-radar /> コアドメインの見極め
 
 ---
 layout: center
@@ -1390,7 +1380,7 @@ class: text-center
 zoom: 2.0
 ---
 
-# コアドメインとは？
+# <carbon-cube /> コアドメインとは？
 
 
 <blockquote>
@@ -1407,7 +1397,7 @@ zoom: 2.5
 
 ---
 
-# ダブルダイヤモンド
+# <carbon-diamond-outline /> ダブルダイヤモンド
 デザイン思考の「問題解決フレームワーク」
 
 <div max-w-160>
@@ -1422,7 +1412,7 @@ class: text-center
 zoom: 2.0
 ---
 
-# 問題領域に向き合う必要がある
+# <carbon-incident-reporter /> 問題領域に向き合う必要がある
 左のダイヤモンド。解くべき問題を定める
 
 
@@ -1434,7 +1424,7 @@ glow: full
 glowSeed: 300
 ---
 
-# 問題領域の定義したものは戦略となる
+# <carbon-strategy-play /> 問題領域の定義したものは戦略となる
 逆に解決領域の提供が戦術となる。戦略を実現する為の戦術という位置づけ
 
 ---
@@ -1442,14 +1432,14 @@ layout: default
 zoom: 1.1
 ---
 
-# 今回の問題の洗い出し
+# <carbon-task-view /> 今回の問題の洗い出し
 
 * 法改正のたびに大きく変わるが、旧制度のルールは壊してはいけない
 * 法令知識を持ってないとメンテナンスができない
   * 認知負荷が高すぎる。開発者全員が深い法令知識があるわけではない
   * 法令に関する影響範囲が分散してしまうと、法改正時の修正漏れが発生する
 * 請求業務のテストパターンが膨大だが、構造的に後回しになってしまう
-* 法改正のシステム対応が間に合わないと、請求ができなくなる  
+* 法改正のシステム対応が間に合わ ないと、請求ができなくなる  
 間違って請求した場合のインパクトも大
 <div v-click="1" class="mx-auto w-full max-w-4xl transition duration-500 ease-in-out"
   :class="$clicks < 1 ? 'opacity-0 scale-90' : 'opacity-100 scale-100'">
@@ -1473,15 +1463,11 @@ zoom: 1.1
 </div>
 </div>
 
-<!--
-守りのコアという考え方もある
--->
-
 ---
 zoom: 1.4
 ---
 
-# 解くべき問題に対する戦略
+# <carbon-strategy-play /> 解くべき問題に対する戦略
 
 * 法改正毎の算定ルールを分けて管理する  
 全制度を知っていなくても開発ができる。  
@@ -1498,7 +1484,7 @@ class: text-center
 transition: slide-up
 ---
 
-# 今回のコアドメインの特定 🎯
+# <carbon-directory-domain /> 今回のコアドメインの特定
 
 <div mt-8 text-2xl>
   課題分析に基づき、最も投資すべき<span class="font-bold text-yellow-300">「コアドメイン」</span>を決定
@@ -1536,7 +1522,7 @@ transition: slide-up
 
 ---
 
-# 戦略に対する戦術
+# <carbon-tools /> 戦略に対する戦術
 ２回のリアーキテクチャの取り組みが戦術となる
 
 * 時系列で API をルーティングさせる
@@ -1563,13 +1549,13 @@ zoom: 3.0
 glow: right
 ---
 
-# まとめ
+# <carbon-document-tasks /> まとめ
 
 ---
 glowSeed: 49
 ---
 
-# コアドメインの本質的な役割
+# <carbon-cube /> コアドメインの本質的な役割
 コアドメインは戦略によって選択される
 
 複雑で変わりやすいドメインロジックを「一箇所に集約」して「隔離」する
@@ -1583,7 +1569,7 @@ glowSeed: 49
 glowSeed: 50
 ---
 
-# 依存性逆転の真の価値
+# <carbon-badge /> 依存性逆転の真の価値
 インターフェースは『複雑さからの防壁』
 
 コアドメインチーム:
@@ -1605,7 +1591,7 @@ transition: slide-up
 glowSeed: 51
 ---
 
-# 3つの重要な教訓 ✨
+# <carbon-education /> 3つの重要な教訓 ✨
 
 <div class="w-full grid grid-cols-3 gap-8 m-auto mt-12 max-w-4xl">
 
@@ -1651,7 +1637,7 @@ glowSeed: 51
 glowSeed: 52
 ---
 
-# 参考URL
+# <carbon-link /> 参考URL
 時系列で記事をまとめています
 
 * [法改正をマイクロサービスで立ち向かう（前編）](https://zenn.dev/litalico/articles/confronting-law-amends-with-microservices)
@@ -1675,7 +1661,7 @@ class: text-center
 transition: fade
 ---
 
-# あなたの技術が、社会を変える 🌎✨
+# <icon-park-outline-pigeon /> あなたの技術が、社会を変える 🌎✨
 
 <div mt-10 text-3xl font-bold>
   <span class="text-yellow-300">教育・福祉領域×Tech</span> で、<br />
