@@ -13,3 +13,4 @@ slides-export-notes.pdf
 .textlintcache
 og-image.png
 public/assets/fonts
+.slidev/snapshots/snapshots.json
