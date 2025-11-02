@@ -54,7 +54,6 @@
   "slidev": {
     "addons": [
       "slidev-addon-components",
-      "@katzumi/slidev-addon-qrcode",
       "slidev-addon-rabbit"
     ]
   }
