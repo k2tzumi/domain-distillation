@@ -379,7 +379,7 @@ layout: two-cols-header
 <v-clicks>
 
 <div class="speech-bubble">
-改修ボリューム的に1チームで完結しない。関心事も様々で混在し絡み合っている
+改修ボリューム的に1チームで完結しない。関心ごとも様々で混在し絡み合っている
 </div>
 
 </v-clicks>
@@ -431,14 +431,14 @@ zoom: 2.0
 
 <v-clicks>
 
-1. 関心事の分離
+1. 関心ごとの分離
 2. 依存性逆転
 
 </v-clicks>
 
 <!--
 先に結論を言うと、Key Success Factor、つまり成功の鍵は
-[click]「関心事の分離」と
+[click]「関心ごとの分離」と
 [click] 「依存性逆転」の2つでした。
 -->
 
@@ -446,7 +446,7 @@ zoom: 2.0
 zoom: 1.5
 ---
 
-# <carbon-cut-out /> 関心事の分離
+# <carbon-cut-out /> 関心ごとの分離
 責務の分離、Separation Of Concerns／SOC
 
 * 責務を十分小さくする  
@@ -455,21 +455,21 @@ zoom: 1.5
 * 修正する理由は 1 つにする
 
 <!--
-まず、2021年度の法改正で取り組んだのが「関心事の分離」です。  
+まず、2021年度の法改正で取り組んだのが「関心ごとの分離」です。  
 SOLID原則の一つ、責務分離です。  
-「機能や関心事をしっかり分け、一つの部品に一つの役割だけを持たせましょう」というやつです。
+「機能や関心ごとをしっかり分け、一つの部品に一つの役割だけを持たせましょう」というやつです。
 -->
 
 ---
 layout: two-cols-header
 ---
 
-# <carbon-cut-out /> どういう関心事を分離していったのか？
-まずは 2 つの関心事を分離した
+# <carbon-cut-out /> どういう関心ごとを分離していったのか？
+まずは 2 つの関心ごとを分離した
 
 * 法改正で旧制度と新制度のロジックが混ざらないようにした  
-同一の関心事を時系列で分断させ別の関心事として扱う
-* 法改正の影響がない周辺の関心事を外に出した  
+同一の関心ごとを時系列で分断させ別の関心ごととして扱う
+* 法改正の影響がない周辺の関心ごとを外に出した  
 時系列で変化をしない処理（請求状態や帳票管理等）を独立させた
 
 <v-click at="1">
@@ -508,7 +508,7 @@ class: py-10
 glowSeed: 215
 ---
 
-# <carbon-chart-3d /> 関心事の分離によるメリット
+# <carbon-chart-3d /> 関心ごとの分離によるメリット
 
 <span>法改正への対応とシステムの健全性向上</span>
 
@@ -622,7 +622,7 @@ glowSeed: 215
 </div>
 
 <!--
-この「関心事の分離」によるメリットは3つあります。  
+この「関心ごとの分離」によるメリットは3つあります。  
 [click] まず、実装効率の向上です。旧制度のコードに触れず、新制度のロジック追加に集中できます。  
 [click] 次に、テスト範囲が限定的になり、新規ロジックのみをテストすればよくなります。  
 [click] そして、保守性の向上です。役割を終えた旧制度のロジックを安全に削除でき、システムの複雑化を防げます。  
@@ -637,7 +637,7 @@ class: text-center
 
 # <carbon-task-complete /> リアーキテクチャは成功 ✨
 
-関心事の分離により、1 つのサービスの安定性は大きく改善されました。
+関心ごとの分離により、1 つのサービスの安定性は大きく改善されました。
 
 <div mt-10 />
 
@@ -781,7 +781,7 @@ class: text-center
   >
     <div i-carbon:group text-6xl text-red-400 m-auto mb-4 />
     <h3 font-bold text-xl>対応領域の拡大と関係者の分散</h3>
-    <p text-sm mt-2>法改正でカバーすべき対応領域が広がる<br />関心事や担当者がシステム間で分散・重複し始めた。</p>
+    <p text-sm mt-2>法改正でカバーすべき対応領域が広がる<br />関心ごとや担当者がシステム間で分散・重複し始めた。</p>
   </div>
 </div>
 
@@ -796,7 +796,7 @@ class: text-center
 
 <!--
 法改正対応の後にビジネスが拡大して、新たな課題がでてきました。    
-[click] プロダクト増加により、対応領域が急拡大し、担当者や関心事がシステム間で分散・重複しました。結果、システム全体の整合性を取るための協調コストが急増して、法改正の難易度が更に上昇しました。
+[click] プロダクト増加により、対応領域が急拡大し、担当者や関心ごとがシステム間で分散・重複しました。結果、システム全体の整合性を取るための協調コストが急増して、法改正の難易度が更に上昇しました。
 -->
 
 ---
@@ -1028,7 +1028,7 @@ layout: center
 class: text-center
 ---
 
-# <carbon-text-clear-format /> 1. 責務が明確になり、関心事にのみ集中 🎯
+# <carbon-text-clear-format /> 1. 責務が明確になり、関心ごとにのみ集中 🎯
 
 <div mt-8 text-2xl>
   この効果は、実績データを蓄積するクライアント（支援アプリなど）にも波及
@@ -1079,7 +1079,7 @@ class: text-center
 
 <!--
 1つ目。  
-以前は、関心事も混在し絡み合っており、幅広く影響を見ないといけませんでした。  
+以前は、関心ごとも混在し絡み合っており、幅広く影響を見ないといけませんでした。  
 それぞれお互いの改修内容を気にする必要がありました。  
 [click] それが「責務が明確になり、自身の関心ごとにのみ集中できる」様になりました。  
 [click] 高品質なAPIスキーマさえ定義できれば、レセプトチームとプロダクトチームは、お互いの状況を気にせずに開発に集中することができます。
@@ -1284,7 +1284,7 @@ zoom: 2.0
 2 つの Key Success Factor
 
 
-1. 関心事の分離
+1. 関心ごとの分離
 2. 依存性逆転
 
 <!--
@@ -1308,8 +1308,8 @@ zoom: 2.0
 layout: default
 ---
 
-# <carbon-query /> なぜ関心事の分離が必要だったのか？
-依存性逆転の前に、まず関心事の分離が必要
+# <carbon-query /> なぜ関心ごとの分離が必要だったのか？
+依存性逆転の前に、まず関心ごとの分離が必要
 
 <v-clicks>
 
@@ -1319,7 +1319,7 @@ layout: default
 2. 境界が不明確  
    → どこでインターフェスを切るべきか分からない。分離により、何が「上位」で何が「下位」かが見える
    
-3. 関心事が混在している  
+3. 関心ごとが混在している  
    → インターフェースが複雑になる。単一責務の原則に反し、リスクも大きくなる  
 
 </v-clicks>
@@ -1373,7 +1373,7 @@ zoom: 0.8
     class="w-32 h-32 left-83 top-8 bg-blue-300 opacity-60 rounded-full flex items-center justify-center text-lg text-blue-900 transition-all duration-700" 
     style="z-index: 15;"
   >
-    関心事A
+    関心ごとA
   </div>
 
   <div 
@@ -1385,7 +1385,7 @@ zoom: 0.8
     class="w-48 h-48 right-110 top-8 bg-green-300 opacity-60 rounded-full flex items-center justify-center text-lg text-green-900 transition-all duration-700"
     style="z-index: 15;"
   >
-    関心事B
+    関心ごとB
   </div>
 
   <div 
@@ -1397,7 +1397,7 @@ zoom: 0.8
     class="w-48 h-48 left-70 bottom-2 bg-orange-300 opacity-60 rounded-full flex items-center justify-center text-lg text-orange-900 transition-all duration-700"
     style="z-index: 15;"
   >
-    関心事D
+    関心ごとD
   </div>
 
   <div 
@@ -1409,7 +1409,7 @@ zoom: 0.8
     class="w-40 h-40 right-63 bottom-8 bg-purple-300 opacity-60 rounded-full flex items-center justify-center text-lg text-purple-900 transition-all duration-700"
     style="z-index: 15;"
   >
-    関心事C
+    関心ごとC
   </div>
 </div>
 
@@ -1433,9 +1433,9 @@ zoom: 0.8
 zoom: 0.8
 ---
 
-# <carbon-bring-forward /> 方法1: 関心事の抽出
+# <carbon-bring-forward /> 方法1: 関心ごとの抽出
 
-<div class="text-green-600 text-xl">Core内から別の関心事を分割</div>
+<div class="text-green-600 text-xl">Core内から別の関心ごとを分割</div>
 
 <div class="relative w-full h-96 flex items-center justify-center">
   <div 
@@ -1453,7 +1453,7 @@ zoom: 0.8
   </div>
 
   <div class="absolute w-32 h-32 left-83 top-8 bg-blue-300 opacity-60 rounded-full flex items-center justify-center text-lg text-blue-900">
-    関心事A
+    関心ごとA
   </div>
 
   <div v-motion 
@@ -1461,16 +1461,16 @@ zoom: 0.8
     :class="$clicks < 1 ? 'right-110 top-8 bg-green-400/60' : 'right-65 top--5 bg-transparent border-3 border-green-700 border-dashed'" 
     class="w-48 h-48 rounded-full flex items-center justify-center text-lg text-green-900 transition-all duration-700"
     style="z-index: 1;">
-    <span v-if="$clicks < 1">関心事B</span>
+    <span v-if="$clicks < 1">関心ごとB</span>
     <span v-else>抽出<br>B</span>
   </div>
   
   <div class="absolute w-48 h-48 left-70 bottom-2 bg-orange-300 opacity-60 rounded-full flex items-center justify-center text-lg text-orange-900">
-    関心事D
+    関心ごとD
   </div>
 
   <div class="absolute w-40 h-40 right-63 bottom-8 bg-purple-300 opacity-60 rounded-full flex items-center justify-center text-lg text-purple-900">
-    関心事C
+    関心ごとC
   </div>
 
   <Arrow 
@@ -1517,7 +1517,7 @@ zoom: 0.8
     absolute 
     :class="$clicks < 1? 'left-83 top-8' : 'left-81 top-6'" 
     style="z-index: 1;" class="absolute w-32 h-32 bg-blue-300 opacity-60 rounded-full flex items-center justify-center text-lg text-blue-900 transition-all duration-700">
-    関心事A
+    関心ごとA
   </div>
 
   <Arrow 
@@ -1531,15 +1531,15 @@ zoom: 0.8
   />
 
   <div right-66 top-0 absolute w-48 h-48 bg-green-300 opacity-60 rounded-full flex items-center justify-center text-lg text-green-900>
-    関心事B  
+    関心ごとB  
   </div>
 
   <div class="absolute w-48 h-48 left-70 bottom-2 bg-orange-300 opacity-60 rounded-full flex items-center justify-center text-lg text-orange-900">
-    関心事D
+    関心ごとD
   </div>
 
   <div class="absolute w-40 h-40 right-63 bottom-8 bg-purple-300 opacity-60 rounded-full flex items-center justify-center text-lg text-purple-900">
-    関心事C
+    関心ごとC
   </div>
 </div>
 
@@ -1573,22 +1573,22 @@ zoom: 0.8
   </div>
 
   <div class="absolute w-32 h-32 left-81 top-6 bg-blue-300 opacity-60 rounded-full flex items-center justify-center text-lg text-blue-900">
-    関心事A
+    関心ごとA
   </div>
 
   <div right-66 top-0 absolute w-48 h-48 bg-green-300 opacity-60 rounded-full flex items-center justify-center text-lg text-green-900>
-    関心事B  
+    関心ごとB  
   </div>
 
   <div v-motion 
     absolute 
     :class="$clicks < 1? 'left-70 bottom-2' : 'left-62 bottom-0'" 
     style="z-index: -1;" class="w-48 h-48 bg-orange-300 opacity-60 rounded-full flex items-center justify-center text-lg text-orange-900 transition-all duration-700">
-    関心事D
+    関心ごとD
   </div>
 
   <div class="absolute w-40 h-40 right-63 bottom-8 bg-purple-300 opacity-60 rounded-full flex items-center justify-center text-lg text-purple-900">
-    関心事C
+    関心ごとC
   </div>
 
   <div v-click="1" class="absolute w-6 h-6 left-108 bottom-32 bg-purple-600 rounded-full transition-all duration-700" style="z-index: 11;"></div>
@@ -1600,7 +1600,7 @@ zoom: 0.8
 
 <div v-click="1" class="mt-8 text-center text-red-600 text-xl">
   <span class="text-fuchsia-700">重なり → インターフェースに集約</span><br>
-  <span class="text-fuchsia-700">全ての関心事がI/Fに依存</span>
+  <span class="text-fuchsia-700">全ての関心ごとがI/Fに依存</span>
 </div>
 <div v-click="1" class="mt-2 text-center text-green-700 text-xl">
   結合度: 最小 (安定)<br>
@@ -1770,14 +1770,14 @@ zoom: 1.4
 * 法改正毎の算定ルールを分けて管理する  
 全制度を知っていなくても開発ができる。  
 旧制度に影響がない状態にする `(開放/閉鎖の原則)`
-* レセプト業務の関心事を凝集して管理する  
+* レセプト業務の関心ごとを凝集して管理する  
 複雑さをシステム全体に拡散させない
 * レセプト業務の知識（算定基準）を専門性を持つチームに集中させる  
 他チームは法令知識の内、運営基準・体制基準にフォーカスさせる
 
 <!--
 先ほどの問題に対する「戦略」を改めて言語化してみました。  
-「算定ルールを分けて管理する」「レセプト業務の関心事を凝集する」「専門知識を特定チームに集中させる」という内容です。  
+「算定ルールを分けて管理する」「レセプト業務の関心ごとを凝集する」「専門知識を特定チームに集中させる」という内容です。  
 この内容は戦略そのものです。
 -->
 
@@ -1939,7 +1939,7 @@ glowSeed: 51
     <span class="font-bold text-xl text-white">2. 境界を明確化</span>
     <hr class="my-3 border-yellow-500">
     <ul class="list-none text-base space-y-2 text-left">
-      <li>関心事の違いを<span class="font-bold">認識</span></li>
+      <li>関心ごとの違いを<span class="font-bold">認識</span></li>
       <li>クロスポイントを<span class="font-bold">インターフェースとして契約化</span></li>
       <li><span class="font-bold">詳細を知らない状態</span>（疎結合）の実現</li>
     </ul>
@@ -1962,7 +1962,7 @@ glowSeed: 51
 <!--
 本日のまとめとして、3つの重要な教訓をお伝えします。  
 [click] 1つ目、「複雑性は隔離」すること。最も複雑で壊れやすい部分は一箇所に集約します。  
-[click] 2つ目、「境界を明確化」すること。関心事の違いを認識し、インターフェースとして契約化します。  
+[click] 2つ目、「境界を明確化」すること。関心ごとの違いを認識し、インターフェースとして契約化します。  
 [click] 3つ目、「依存の方向を制御」すること。データの流れと依存の方向を同一視せず、最も重要な部分を最も安定した位置に配置します。
 -->
 
