@@ -1231,7 +1231,7 @@ class: text-center
     <ul class="list-disc list-inside text-xl space-y-3 text-left">
       <li>多くのテストケースを<span class="font-bold">開発終盤</span>で一気に消化</li>
       <li><span class="font-bold">時間的プレッシャー</span>が非常に大きい</li>
-      <li>手戻りが発生した場合の<span class="font-bold">コストが高い</span></li>
+      <li>見切り発車でによる並行開発で、手戻りが発生した場合の<span class="font-bold">コストが高い</span></li>
     </ul>
   </div>
 
@@ -1268,7 +1268,7 @@ class: text-center
 
 <!--
 4つ目。  
-以前は、開発の終盤にテストが集中することが多くQAへの負担が大きかったです。又、並行開発故に手戻りが発生した場合のインパクトも多かったです。    
+以前は、開発の終盤にテストが集中することが多くQAへの負担が大きかったです。又、見切り発車での並行開発で手戻りがコストも増加していました。    
 [click] それがインターフェス仕様を先に決めることで、並行開発することができるようになりました。 
 また独立してテストを行えたり、開発着手が早まる分、結合前に品質を確保することが可能になりました。   
 [click] プロジェクト全体の開発サイクルが大幅に短縮され、品質にも寄与することができました。
@@ -1297,7 +1297,7 @@ class: text-center
 zoom: 2.0
 ---
 
-# <carbon-query /> なぜこの順番だったのか？ 🤔
+# <mdi-confirmation-number /> なぜこの順番だったのか？ 🤔
 
 <!--
 ここで2つの成功要因には順番があるということに気づかれましたでしょうか？  
@@ -1485,7 +1485,7 @@ zoom: 0.8
 </div>
 
 <div class="mt-8 text-center text-green-600 text-xl" v-click="1">
-  重なり: 大幅減<br>
+  重なり: 縮小<br>
   結合度: 改善<br>
   境界: 少し明確化<br>
 </div>
