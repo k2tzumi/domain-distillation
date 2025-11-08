@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.0.3](https://github.com/k2tzumi/domain-distillation/compare/v0.0.2...v0.0.3) - 2025-11-08
+- Bonsai by @k2tzumi in https://github.com/k2tzumi/domain-distillation/pull/13
+
 ## [v0.0.2](https://github.com/k2tzumi/domain-distillation/compare/v0.0.1...v0.0.2) - 2025-11-05
 - Refine by @k2tzumi in https://github.com/k2tzumi/domain-distillation/pull/9
 - build(deps): Bump actions/setup-node from 5 to 6 by @dependabot[bot] in https://github.com/k2tzumi/domain-distillation/pull/3
