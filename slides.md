@@ -34,7 +34,7 @@ addons:
 # アーキテクチャレベルで依存性を逆転させたら最高だった話
 
 PHP カンファレンス福岡 2025 November 8, 2025.  
-v0.0.2  
+v0.0.3  
 @katzumi(かつみ)
 
 <div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
