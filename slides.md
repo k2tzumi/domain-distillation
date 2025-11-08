@@ -2109,3 +2109,9 @@ transition: fade
 最後に宣伝させてください。  
 私たちは「障害のない社会をつくる」チャレンジをしています。ご興味のある方は、ぜひお気軽にお声がけください！
 -->
+
+---
+layout: image
+image: /hireling.png
+backgroundSize: contain
+---
