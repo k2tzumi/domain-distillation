@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.0.4](https://github.com/k2tzumi/domain-distillation/compare/v0.0.3...v0.0.4) - 2025-11-09
+- Fix by @k2tzumi in https://github.com/k2tzumi/domain-distillation/pull/15
+- Refactor global bottom by @k2tzumi in https://github.com/k2tzumi/domain-distillation/pull/17
+
 ## [v0.0.3](https://github.com/k2tzumi/domain-distillation/compare/v0.0.2...v0.0.3) - 2025-11-08
 - Bonsai by @k2tzumi in https://github.com/k2tzumi/domain-distillation/pull/13
 
